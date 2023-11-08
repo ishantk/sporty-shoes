@@ -1,0 +1,26 @@
+Build:
+docker build -t ishantkr/sporty-shoes . 
+
+Container:
+docker run --name sporty-shoes-container -d -p 9010:9010 ishantkr/sporty-shoes
+
+Push:
+docker push ishantkr/sporty-shoes:latest
+
+Pull:
+docker image pull ishantkr/sporty-shoes:latest
+
+Kubernetes
+kubectl apply -f deployment.yaml
+kubectl apply -f service.yaml
+
+Verify
+kubectl get deployments
+kubectl get pods
+
+kubectl get services
+
+kubectl describe service sporty-shoes-service
+
+Access Application
+
