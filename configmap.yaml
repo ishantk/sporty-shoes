@@ -1,0 +1,7 @@
+apiVersion: v1
+kind: ConfigMap
+metadata:
+  name: sporty-shoes-config
+data:
+  APP_NAME: "Sporty Shoes App"
+  PORT: "9010"
