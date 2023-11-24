@@ -3,7 +3,7 @@ kind: Deployment
 metadata:
   name: sporty-shoes
 spec:
-  replicas: 3
+  replicas: 3  # Adjust the number of replicas as needed
   selector:
     matchLabels:
       app: sporty-shoes
@@ -17,14 +17,3 @@ spec:
         image: ishantkr/sporty-shoes:latest
         ports:
         - containerPort: 9010
-        env:
-        - name: APP_NAME
-          valueFrom:
-            configMapKeyRef:
-              name: sporty-shoes-config
-              key: APP_NAME
-        - name: PORT
-          valueFrom:
-            configMapKeyRef:
-              name: sporty-shoes-config
-              key: PORT
