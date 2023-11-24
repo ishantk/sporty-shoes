@@ -22,5 +22,50 @@ kubectl get services
 
 kubectl describe service sporty-shoes-service
 
-Access Application
+
+TKGI
+Login:
+> tkgi login -a pks-api.tanzu.biz -u pks-admin -k
+
+Plans:
+> tkgi plans
+
+Verify:
+> tkgi clusters
+
+Ping:
+> tkgi cluster pks-cluster-01
+
+Access Cluster:
+> tkgi get-credentials pks-cluster-01
+
+Get Information on Running Pods
+> kubectl get pods -A
+Get Information on Running Nodes
+> kubectl get nodes -o wide
+
+CREATE CLUSTER CLI
+------------------
+Login:
+> tkgi login -a pks-api.tanzu.biz -u pks-admin -k
+
+Verify:
+> tkgi clusters
+
+Ping:
+> tkgi cluster pks-cluster-01
+
+Create Cluster:
+> tkgi create-cluster pks-cluster-01 --external-hostname pks-cluster-01.tanzu.biz --plan Medium
+
+Verify:
+> tkgi clusters
+
+Access Cluster:
+> tkgi get-credentials pks-cluster-01
+
+Get Information on Running Pods
+> kubectl get pods -A
+Get Information on Running Nodes
+> kubectl get nodes -o wide
 
