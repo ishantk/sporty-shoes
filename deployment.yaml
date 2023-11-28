@@ -17,3 +17,14 @@ spec:
         image: ishantkr/sporty-shoes:latest
         ports:
         - containerPort: 9010
+        env:
+        - name: APP_NAME
+          valueFrom:
+            configMapKeyRef:
+              name: sporty-shoes-config
+              key: APP_NAME
+        - name: PORT
+          valueFrom:
+            configMapKeyRef:
+              name: sporty-shoes-config
+              key: PORT
