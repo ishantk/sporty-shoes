@@ -6,8 +6,7 @@ spec:
   selector:
     app: sporty-shoes
   ports:
-  - protocol: TCP
+    protocol: TCP
     port: 9010
     targetPort: 9010
-  type: NodePort 
-
+  type: NodePort
