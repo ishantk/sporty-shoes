@@ -1,0 +1,30 @@
+apiVersion: apps/v1
+kind: Deployment
+metadata:
+  name: sporty-shoes
+spec:
+  replicas: 3
+  selector:
+    matchLabels:
+      app: sporty-shoes
+  template:
+    metadata:
+      labels:
+        app: sporty-shoes
+    spec:
+      containers:
+      - name: sporty-shoes-container
+        image: ishantkr/sporty-shoes:latest
+        ports:
+        - containerPort: 9010
+        env:
+        - name: APP_NAME
+          valueFrom:
+            configMapKeyRef:
+              name: sporty-shoes-config
+              key: APP_NAME
+        - name: PORT
+          valueFrom:
+            configMapKeyRef:
+              name: sporty-shoes-config
+              key: PORT
