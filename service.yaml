@@ -1,12 +1,12 @@
 apiVersion: v1
 kind: Service
 metadata:
-  name: sporty-shoes-service
+ name: sporty-shoes-service
 spec:
-  selector:
-    app: sporty-shoes
-  ports:
-    protocol: TCP
-    port: 9010
-    targetPort: 9010
-  type: NodePort
+ selector:
+   app: sporty-shoes
+ ports:
+ - protocol: TCP
+   port: 9010
+   targetPort: 9010
+ type: NodePort
