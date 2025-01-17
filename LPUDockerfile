@@ -1,14 +1,14 @@
 # Use official JDK as the base image
 FROM openjdk:11
 
-#Set the working directory inside the container
-WORKDIR /app
+# Expose Port
+EXPOSE 9010
 
-#Copy the Spring Boot JAR file into the container
-COPY sporty-shoes-v1.jar sporty-shoes-v1.jar
+# Create Argument
+ARG JAR_FILE=./*.jar
 
-#Expose the port the application runs on
-EXPOSE 8080
+# Copy the the JAR file
+COPY ${JAR_FILE} app.jar
 
-#Command to run the Spring Boot application
-CMD [“java”, “-jar”, “sporty-shoes-v1.jar”]
+# Run the JAR file
+ENTRYPOINT ["java","-jar","/app.jar"]
