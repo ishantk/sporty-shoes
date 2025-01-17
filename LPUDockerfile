@@ -5,10 +5,10 @@ FROM openjdk:11
 WORKDIR /app
 
 #Copy the Spring Boot JAR file into the container
-COPY sporty-shoes.jar sporty-shoes.jar
+COPY sporty-shoes-v1.jar sporty-shoes-v1.jar
 
 #Expose the port the application runs on
 EXPOSE 8080
 
 #Command to run the Spring Boot application
-CMD [“java”, “-jar”, “sporty-shoes.jar”]
+CMD [“java”, “-jar”, “sporty-shoes-v1.jar”]
