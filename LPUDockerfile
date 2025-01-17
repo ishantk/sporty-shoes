@@ -1,14 +1,14 @@
-#Use an official OpenJDK image as the base
-FROM openjdk: 11-jre-slim
+# Use official JDK as the base image
+FROM openjdk:11
 
 #Set the working directory inside the container
 WORKDIR /app
 
 #Copy the Spring Boot JAR file into the container
-COPY target/ProductService.jar ProductService.jar
+COPY sporty-shoes.jar sporty-shoes.jar
 
 #Expose the port the application runs on
 EXPOSE 8080
 
 #Command to run the Spring Boot application
-CMD [“java”, “-jar”, “ProductService.jar”]
+CMD [“java”, “-jar”, “sporty-shoes.jar”]
